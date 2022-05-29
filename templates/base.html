@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TODO Flask App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body class="bg-emerald-400">
+
+  {% block content %}
+  <!-- Content -->
+  {% endblock content %}
+
+  <script src="{{url_for('static', filename='js/htmx.min.js')}}"></script>
+  </body>
+</html>

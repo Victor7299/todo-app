@@ -1,0 +1,15 @@
+<table class="flex-1 py-3 rounded-xl bg-gray-100 w-full">
+  <thead class="">
+    <tr>
+      <th class="w-4/5 px-6 text-sx font-medium text-gray-500 uppercase text-left">Title</th>
+      <th class="w-1/5 text-xs font-medium text-gray-500 uppercase">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-200" id="todos">
+    {% for todo in todos %}
+    
+    {% include 'todo.html' %}
+
+    {% endfor %}
+  </tbody>
+</table>

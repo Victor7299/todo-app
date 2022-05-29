@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex items-center py-6 bg-emerald-300">
+    <h1 class="text-4xl text-slate-900">TODO APP</h1>
+  </div>
+  
+  <div class="w-4/5 my-6 mx-auto p-2 lg:p-10  rounded-xl bg-white">
+    <form 
+        class="flex mb-6 space-x-4"
+        hx-post="{{ url_for('add_todo') }}"
+        hx-target="#todos"
+        hx-swap="beforeend"
+    >
+      <input id="'todo_title" name ="todo_title" type="text" class="title flex-1 px-4 py-3 bg-gray-200 rounded-xl" placeholder="Todo Title">
+      <button class="p-3 rounded-xl text-white bg-emerald-600 hover:bg-emerald-500" >Submit</button>
+    </form>
+
+    {% include 'todo_table.html' %}
+
+
+  </div>
+{% endblock content %}
