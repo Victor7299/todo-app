@@ -1,5 +1,5 @@
 <tr class="flex-1 {% if todo.is_done %} bg-cyan-100 {% endif %}" id="todo_{{todo.id}}">
-  <form hx-put="{{ url_for('update_todo', id=todo.id) }}"
+  <form hx-put="{{ url_for('core.update_todo', id=todo.id) }}"
     hx-target="#todo_{{todo.id}}" hx-swap="outerHTML">
     <td class="w-4/5 py-3">
       <div>
@@ -12,7 +12,7 @@
         <button class="text-emerald-600 hover:text-emerald-500">Done</button>
         {% endif %}
         <a class="text-emerald-600 hover:text-emerald-500" hx-target="closest tr" hx-swap="outerHTML swap:1s"
-          hx-delete="{{ url_for('delete_todo', id=todo.id) }}">
+          hx-delete="{{ url_for('core.delete_todo', id=todo.id) }}">
           Delete
         </a>
       </div>

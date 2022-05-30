@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, abort, Response
+from flask import Flask, render_template, request, abort#, Response
+from flask.wrappers import Response
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 
@@ -69,8 +70,7 @@ def delete_todo(id):
         try:
             db.session.delete(todo)
             db.session.commit()
-            response = Response(status=200)
-            return response
+            return Response(status=200) 
         except Exception as e:
             db.session.rollback()
             abort(400)

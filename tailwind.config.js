@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./templates/*.html", "./static/js/*.js"],
+  content: ["./todo_app/**/*.html", "./todo_app/static/js/*.js"],
   theme: {
     extend: {},
   },
